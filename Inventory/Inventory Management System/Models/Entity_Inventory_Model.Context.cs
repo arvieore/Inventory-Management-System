@@ -28,6 +28,7 @@ namespace Inventory_Management_System.Models
         }
     
         public virtual DbSet<Accounts> Accounts { get; set; }
+        public virtual DbSet<Category> Category { get; set; }
     
         public virtual ObjectResult<sp_ValidateAccount_Result> sp_ValidateAccount(string user_name, string user_password)
         {

@@ -78,6 +78,9 @@
     <Compile Include="Models\Accounts.cs">
       <DependentUpon>Entity_Inventory_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>Entity_Inventory_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entity_Inventory_Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

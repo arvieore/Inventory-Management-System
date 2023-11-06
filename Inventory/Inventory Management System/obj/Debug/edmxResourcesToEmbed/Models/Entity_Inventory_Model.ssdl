@@ -10,11 +10,19 @@
     <Property Name="user_Position" Type="varchar" MaxLength="50" />
     <Property Name="user_Address" Type="varchar" MaxLength="250" />
   </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="categoryID" />
+    </Key>
+    <Property Name="categoryID" Type="int" Nullable="false" />
+    <Property Name="categoryName" Type="varchar" MaxLength="50" />
+  </EntityType>
   <Function Name="sp_ValidateAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="user_name" Type="varchar" Mode="In" />
     <Parameter Name="user_password" Type="varchar" Mode="In" />
   </Function>
   <EntityContainer Name="InventoryDBModelStoreContainer">
     <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

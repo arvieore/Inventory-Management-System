@@ -16,9 +16,17 @@
       <Parameter Name="user_name" Mode="In" Type="String" />
       <Parameter Name="user_password" Mode="In" Type="String" />
     </FunctionImport>
+    <EntitySet Name="Category" EntityType="InventoryDBModel.Category" />
   </EntityContainer>
   <ComplexType Name="sp_ValidateAccount_Result">
     <Property Type="Int32" Name="user_ID" Nullable="false" />
     <Property Type="String" Name="user_Position" Nullable="true" MaxLength="50" />
   </ComplexType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="categoryID" />
+    </Key>
+    <Property Name="categoryID" Type="Int32" Nullable="false" />
+    <Property Name="categoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

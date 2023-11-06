@@ -31,26 +31,29 @@ namespace Inventory_Management_System
             {
                 errorProvider.SetError(txtPassword, "Field is Empty");
             }
-            int account = validate.GetAccount(txtUsername.Text, txtPassword.Text);
-
-            String position = validate.GetPosition(account);
-            
-            //Determine the position of the user.
-            if (account != 0)
-            {
-                switch(position)
-                {
-                    case "Admin":
-                        MessageBox.Show("Welcome Admin!");
-                        this.Hide();
-                        AdminDashboard Form_Admin = new AdminDashboard();
-                        Form_Admin.Show();
-                        break;
-                }
-            }
             else
             {
-                MessageBox.Show("Invalid Account!");
+                int account = validate.GetAccount(txtUsername.Text, txtPassword.Text);
+
+                String position = validate.GetPosition(account);
+
+                //Determine the position of the user.
+                if (account != 0)
+                {
+                    switch(position)
+                    {
+                        case "Admin":
+                            MessageBox.Show("Welcome Admin!");
+                            this.Hide();
+                            AdminDashboard Form_Admin = new AdminDashboard();
+                            Form_Admin.Show();
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Account!");
+                }
             }
         }
 
